@@ -1,108 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import PageContainer from "./_components/pageContainer";
 
 export default function Home() {
-  const [theme, setTheme] = useState<boolean>(true);
-  function handleCheck() {
-    setTheme(!theme);
-  }
+  const contents = [
+    { title: "Introduction", link: "/introduction" },
+    { title: "Historical Context - the Luddite Riots", link: "/luddites" },
+    {
+      title: "Historical Context - the Captain Swing Riots",
+      link: "/captainswing",
+    },
+    { title: "Marx's Analysis", link: "/marx" },
+    {
+      title: "Automation Changes the Composition of the Workforce",
+      link: "/composition",
+    },
+    { title: "Modern Counterarguments", link: "/counterarguments" },
+    { title: "Conclusion", link: "/conclusion" },
+    { title: "Works Cited", link: "/workscited" },
+  ];
 
   return (
-    <div
-      className="flex h-screen w-screen justify-center"
-      data-theme={theme ? "black" : "retro"}
-    >
-      <label className="swap swap-rotate absolute top-2 right-2">
-        {/* this hidden checkbox controls the state */}
-        <input
-          type="checkbox"
-          className="theme-controller"
-          value="black"
-          onChange={handleCheck}
-        />
-
-        {/* sun icon */}
-        <svg
-          className="swap-off h-10 w-10 fill-current"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-        </svg>
-
-        {/* moon icon */}
-        <svg
-          className="swap-on h-10 w-10 fill-current"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-        </svg>
-      </label>
-      <div className="bg-base-300 flex h-screen w-3/4 flex-col items-center overflow-y-scroll p-16">
-        <h1 className="mb-4 text-3xl font-bold">Hello</h1>
-
-        <p className="text-lg">
-          &emsp;&emsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Fusce tristique erat vel turpis faucibus accumsan. Morbi ut
-          pellentesque elit. Duis ac enim sit amet ante efficitur maximus cursus
-          et risus. Duis hendrerit enim at dictum fringilla. Mauris sed
-          condimentum enim, sit amet interdum odio. Maecenas rutrum eros massa,
-          non vehicula ipsum imperdiet venenatis. Orci varius natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus. Aenean
-          ultricies venenatis nisi, ut semper arcu. Ut condimentum hendrerit
-          lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Pellentesque sit amet elementum eros. In lacinia mi odio, ut placerat
-          lectus pretium vitae. Nam at elit a elit ultricies auctor ac non
-          nulla. Vestibulum fringilla a dui vitae convallis. Quisque id sapien
-          et lacus bibendum pellentesque. Maecenas commodo venenatis urna,
-          facilisis malesuada metus faucibus gravida.
-        </p>
-        <p className="text-lg">
-          &emsp;&emsp;In luctus hendrerit sapien elementum imperdiet. Ut iaculis
-          dapibus placerat. Sed in dignissim urna. Vestibulum dignissim aliquam
-          odio, in fringilla purus laoreet vestibulum. Quisque condimentum diam
-          felis, vitae maximus mauris pharetra ac. Mauris mi orci, blandit non
-          maximus at, consectetur ut justo. Pellentesque ullamcorper lorem sit
-          amet commodo elementum. Vestibulum quis massa lobortis, vulputate
-          dolor quis, tincidunt libero. Nullam eget erat non magna malesuada
-          iaculis. Vivamus mollis est vel augue aliquam, eu malesuada magna
-          sollicitudin. Interdum et malesuada fames ac ante ipsum primis in
-          faucibus. Pellentesque suscipit elementum eros vitae eleifend. Cras
-          pulvinar a lorem sed dictum.
-        </p>
-        <p className="text-lg">
-          &emsp;&emsp;Aenean eget justo elit. Pellentesque cursus scelerisque
-          magna, quis consectetur est. Integer finibus ligula a congue
-          tincidunt. Duis ultrices est a eros luctus, eu lobortis felis dapibus.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nunc
-          sem, aliquet ut vehicula sed, pulvinar ut nibh. Aliquam erat volutpat.
-          Nulla facilisi. Nullam ac interdum erat. Phasellus fermentum eu est
-          vitae egestas. Vestibulum sed augue purus. Aliquam viverra elit in
-          congue scelerisque. Maecenas euismod in ex ut euismod. Vivamus
-          pellentesque velit arcu, non ultrices massa rhoncus vel.
-        </p>
-        <p className="text-lg">
-          &emsp;&emsp;Praesent elementum leo porta turpis placerat, quis
-          facilisis augue ullamcorper. Vivamus vel varius ex. Mauris porttitor
-          leo elit, at ornare urna interdum eu. Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices posuere cubilia curae; Cras quis
-          pharetra nunc. Vivamus bibendum, ipsum in ultrices dignissim, massa
-          risus facilisis metus, at eleifend erat nisi non ipsum. Ut vel congue
-          dui. In aliquet pretium ante, et fermentum mauris finibus fringilla.
-          Vestibulum egestas nec mi euismod malesuada. Ut vestibulum ipsum
-          massa.
-        </p>
-        <p className="text-lg">
-          &emsp;&emsp;Donec in augue eget felis congue dignissim. Phasellus
-          eleifend tortor vel gravida dapibus. Etiam pellentesque volutpat dui,
-          nec pharetra orci aliquam in. In hac habitasse platea dictumst.
-          Vestibulum malesuada venenatis ullamcorper. Suspendisse eu finibus mi,
-          a consequat nulla. Donec tempor dapibus sodales. Phasellus vel erat
-          velit. In hac habitasse platea dictumst.
-        </p>
-      </div>
-    </div>
+    <PageContainer>
+      <ul className="list">
+        <li className="p-4 pb-2 text-xs tracking-wide opacity-60">
+          Table of Contents
+        </li>
+        {contents.map((page, i) => (
+          <Link href={page.link} key={i}>
+            <li className="list-row">
+              <div className="text-4xl font-thin tabular-nums opacity-30">
+                {i + 1}
+              </div>
+              <div className="list-col-grow">
+                <div className="text-2xl">{page.title}</div>
+              </div>
+            </li>
+          </Link>
+        ))}
+      </ul>
+    </PageContainer>
   );
 }
