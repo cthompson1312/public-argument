@@ -16,7 +16,7 @@ export default function Home() {
       title: "Automation Changes the Composition of the Workforce",
       link: "/composition",
     },
-    { title: "Modern Counterarguments", link: "/counterarguments" },
+    //{ title: "Modern Counterarguments", link: "/counterarguments" },
     { title: "Conclusion", link: "/conclusion" },
     { title: "Works Cited", link: "/workscited" },
   ];
