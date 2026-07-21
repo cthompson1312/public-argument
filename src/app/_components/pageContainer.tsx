@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 function PageContainer({ children }: { children: React.ReactNode }) {
@@ -51,10 +52,12 @@ function PageContainer({ children }: { children: React.ReactNode }) {
         </svg>
       </label>
       <div className="bg-base-300 flex h-screen w-2/3 flex-col items-center overflow-y-scroll p-16">
-        <h1 className="mb-4 text-3xl font-bold">
-          The Societal Costs and Benefits of Automation
-        </h1>
-        <h2 className="pb-8">English 1120 Project by Colby Thompson</h2>
+        <Link href="/">
+          <h1 className="mb-4 text-3xl font-bold">
+            The Societal Costs and Benefits of Automation
+          </h1>
+          <h2 className="pb-8">English 1120 Project by Colby Thompson</h2>
+        </Link>
         {children}
       </div>
     </div>

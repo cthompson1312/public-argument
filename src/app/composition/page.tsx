@@ -1,5 +1,7 @@
 import React from "react";
 import PageContainer from "../_components/pageContainer";
+import Link from "next/link";
+import Image from "next/image";
 
 function Composition() {
   return (
@@ -18,23 +20,37 @@ function Composition() {
         Exploration”, they lay out what they found. They used a computer to
         model changes in task content across various jobs and industries, when
         they were exposed to automation brought about by the computer{" "}
-        <a className="link" href="/workscited#autor">
+        <Link className="link" href="/workscited#autor">
           (Autor, et.al.)
-        </a>
+        </Link>
         . What they found is that their model predicts a 4.3% decline in the
         number of “routine manual tasks” that were being performed
-        <a className="link" href="/workscited#autor">
+        <Link className="link" href="/workscited#autor">
           (Autor, et.al.)
-        </a>
+        </Link>
         . When compared to the actual data, their model predicts 60% of the
         change in the labor force
-        <a className="link" href="/workscited#autor">
+        <Link className="link" href="/workscited#autor">
           (Autor, et.al.)
-        </a>
+        </Link>
         . This means that there is a demonstrable link between the introduction
         of automation and the change in the task content of jobs, which very
         often leads to people being laid off.
       </p>
+      <Link href="/workscited#autor" className="mt-4">
+        <Image src="/fig1.png" alt="Figure 1" width={640} height={640} />
+      </Link>
+      <p className="mt-1">
+        A figure depicting the change in task input from 1960. Note the decrease
+        in everything but nonroutine analytic and nonroutine interactive. Image
+        from{" "}
+        <Link className="link" href="/workscited#autor">
+          (Autor, et.al.)
+        </Link>
+      </p>
+      <Link className="mt-8" href="/conclusion">
+        <button className="btn btn-secondary">Next Chapter</button>
+      </Link>
     </PageContainer>
   );
 }

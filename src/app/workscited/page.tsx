@@ -14,6 +14,14 @@ function WorksCited() {
       anchor: "klein",
     },
     {
+      author: "Brain, Jessica.",
+      title: '"The Luddites"',
+      journal: "Historic UK",
+      date: "6 Oct. 2018",
+      link: "https://www.historic-uk.com/HistoryUK/HistoryofBritain/The-Luddites/",
+      anchor: "brain",
+    },
+    {
       author: "Voth, Hans-Joachim, and Caprettini, Bruno",
       title:
         '"Rage against the Machines: New Technology and Violent Unrest in Industrialising Britain."',

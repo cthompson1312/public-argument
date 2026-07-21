@@ -1,5 +1,6 @@
 import React from "react";
 import PageContainer from "../_components/pageContainer";
+import Link from "next/link";
 
 function Introduction() {
   return (
@@ -13,6 +14,9 @@ function Introduction() {
         strife, as has been the case in the past. It is therefore of critical
         importance to design policy so that such things can be avoided.
       </p>
+      <Link className="mt-8" href="/luddites">
+        <button className="btn btn-secondary">Next Chapter</button>
+      </Link>
     </PageContainer>
   );
 }
